@@ -1,8 +1,9 @@
-
 import React from "react";
 import Link from "next/link";
 import { BiHomeCircle, BiBell, BiUser, BiSolidPen } from "react-icons/bi";
 import Button from "../Button/page";
+import { signIn, signOut } from "next-auth/react";
+
 
 const NavigationItem = [
   {
@@ -24,10 +25,7 @@ const NavigationItem = [
 ];
 
 
-const handleClick = () => {
- 
-};
-const SideBar = ({session}) => {
+const SideBar = ({ session }) => {
   return (
     <section className="fixed w-[275px] flex flex-col items-stretch h-screen space-y-4 my-4 hidden lg:block justify-between">
       <div className="flex flex-col items-stretch h-screen space-y-4 ">
@@ -46,19 +44,17 @@ const SideBar = ({session}) => {
         <Button />
         <div className="my-8">
           {session ? (
-            <Link
-              href="api/auth/signout?callbackUrl=/"
-              className="bg-neutral-900  py-2 px-2 ml-3 text-[15px] text-center rounded-xl border-s-8  border-pink-500  hover:bg-opacity-70 transition duration-200"
-            >
+            <button type="button" 
+            onClick={() => signOut() }
+            className="bg-neutral-900  py-2 px-2 ml-3 text-[15px] text-center rounded-xl border-s-8  border-pink-500  hover:bg-opacity-70 transition duration-200">
               signout
-            </Link>
+            </button>
           ) : (
-            <Link
-              href="api/auth/signin"
-              className="bg-neutral-900  py-2 px-2 ml-3 text-[15px] text-center rounded-xl border-r-8 border-pink-500  hover:bg-opacity-70 transition duration-200"
-            >
+            <button type="button"
+            onClick={() => signIn()}
+            className="bg-neutral-900  py-2 px-2 ml-3 text-[15px] text-center rounded-xl border-r-8 border-pink-500  hover:bg-opacity-70 transition duration-200">
               signin
-            </Link>
+            </button>
           )}
         </div>
       </div>
