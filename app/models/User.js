@@ -5,7 +5,7 @@ const userSchema = new Schema({
     email: {type: String, required: [true, "please enter your email"], unique: [true, "Email already exist"] },
     username: {type: String},
     createdAt: {type: String},
-    password: {type: String}
+    password: {type: String},
 });
 try {
   delete models.User;

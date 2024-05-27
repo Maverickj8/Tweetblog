@@ -2,9 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import { BiHomeCircle, BiBell, BiUser, BiSolidPen } from "react-icons/bi";
-import { getServerSession } from "next-auth";
-import { options } from "@/app/api/auth/[...nextauth]/option";
-import { redirect } from "next/navigation";
 import Button from "../Button/page";
 
 const NavigationItem = [

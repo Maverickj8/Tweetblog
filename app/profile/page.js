@@ -90,7 +90,7 @@ const Profile = () => {
               </div>
               <div className="mt-6 px-3">
                 <div className="mb-5">
-                  <h2 className="font-bold text-xl">Juliet Albert</h2>
+                  <h2 className="font-bold text-xl">{session.user.name}</h2>
                   <p className="text-gray-500">@MaverickAlbert5</p>
                 </div>
                 <div className="mb-4">

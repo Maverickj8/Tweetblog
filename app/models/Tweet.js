@@ -4,7 +4,6 @@ import moment from "moment";
 const tweetSchema = new Schema({
   user: {
     username: String,
-    _id: String,
     name: String,
     image: String,
   },
